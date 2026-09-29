@@ -1,0 +1,1850 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GameNest | Play. Book. Enjoy.</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07090f;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 78px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(7, 9, 15, 0.92);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid #202631;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: #00f5a0;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar nav a {
+    color: #a5adba;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #00f5a0;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.login {
+    color: #cbd0d9;
+    font-size: 14px;
+}
+
+.signup {
+    background: #00f5a0;
+    color: #03110b;
+
+    padding: 10px 20px;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.signup:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,245,160,.4);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    padding: 90px 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(0,245,160,.14),
+            transparent 35%
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(0,245,160,.3);
+    border-radius: 30px;
+
+    color: #00f5a0;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+
+    background: rgba(0,245,160,.05);
+}
+
+.hero h1 {
+    font-size: clamp(50px, 7vw, 90px);
+    line-height: .95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+.hero h1 span {
+    color: #00f5a0;
+}
+
+.hero-content > p {
+    color: #8e96a5;
+
+    max-width: 570px;
+
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.primary-btn {
+    display: inline-block;
+
+    background: #00f5a0;
+    color: #03110b;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 35px rgba(0,245,160,.25);
+}
+
+.secondary-btn {
+    padding: 14px 24px;
+
+    border: 1px solid #2a303b;
+    border-radius: 8px;
+
+    color: #c6cbd4;
+
+    transition: .3s;
+}
+
+.secondary-btn:hover {
+    color: #00f5a0;
+    border-color: #00f5a0;
+}
+
+
+/* =========================
+   HERO VISUAL
+========================= */
+
+.hero-card {
+    width: 380px;
+    height: 430px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(0,245,160,.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(0,245,160,.12),
+            rgba(255,255,255,.02)
+        );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    box-shadow:
+        0 0 80px rgba(0,245,160,.08);
+
+    animation: float 4s ease-in-out infinite;
+}
+
+.controller {
+    font-size: 130px;
+
+    filter:
+        drop-shadow(
+            0 0 25px rgba(0,245,160,.5)
+        );
+}
+
+.hero-card h2 {
+    letter-spacing: 6px;
+    margin-top: 15px;
+}
+
+.hero-card p {
+    color: #7d8593;
+    font-size: 12px;
+}
+
+.floating {
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #11151e;
+
+    border: 1px solid #2a313d;
+
+    border-radius: 16px;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.5);
+}
+
+.one {
+    top: 40px;
+    left: -25px;
+}
+
+.two {
+    top: 100px;
+    right: -25px;
+}
+
+.three {
+    bottom: 45px;
+    left: -25px;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-area {
+    padding: 0 7%;
+    margin-top: -35px;
+}
+
+.search-box {
+    padding: 20px;
+
+    background: #11151e;
+
+    border: 1px solid #292f3b;
+
+    border-radius: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 170px;
+
+    gap: 15px;
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.35);
+}
+
+.search-item {
+    padding: 10px 15px;
+
+    border-right: 1px solid #292f3b;
+}
+
+.search-item small {
+    display: block;
+
+    color: #68717e;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    margin-bottom: 4px;
+}
+
+.search-item strong {
+    color: #d2d6de;
+
+    font-size: 13px;
+
+    font-weight: normal;
+}
+
+.search-button {
+    border: none;
+
+    background: #00f5a0;
+
+    color: #03110b;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.search-button:hover {
+    box-shadow:
+        0 0 25px rgba(0,245,160,.4);
+}
+
+
+/* =========================
+   GENERAL SECTION
+========================= */
+
+section {
+    padding: 100px 7%;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    margin-bottom: 40px;
+}
+
+.small-title {
+    color: #00f5a0;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+.section-heading h2,
+.center-heading h2 {
+    font-size: 40px;
+}
+
+.section-heading h2 span,
+.center-heading h2 span {
+    color: #00f5a0;
+}
+
+.view-all {
+    color: #00f5a0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   GAME CARDS
+========================= */
+
+.games-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+.game-card {
+    background: #10141d;
+
+    border: 1px solid #252b36;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    transition: .4s;
+}
+
+.game-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(0,245,160,.5);
+
+    box-shadow:
+        0 20px 45px rgba(0,245,160,.08);
+}
+
+.game-image {
+    height: 220px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 85px;
+
+    position: relative;
+}
+
+.cricket {
+    background:
+        linear-gradient(
+            135deg,
+            #123f35,
+            #10231f
+        );
+}
+
+.bowling {
+    background:
+        linear-gradient(
+            135deg,
+            #352344,
+            #161326
+        );
+}
+
+.gokart {
+    background:
+        linear-gradient(
+            135deg,
+            #443016,
+            #20170c
+        );
+}
+
+.badminton {
+    background:
+        linear-gradient(
+            135deg,
+            #12334a,
+            #0d1b2a
+        );
+}
+
+.tag {
+    position: absolute;
+
+    top: 15px;
+    left: 15px;
+
+    padding: 5px 9px;
+
+    background: rgba(0,0,0,.5);
+
+    border-radius: 5px;
+
+    color: #00f5a0;
+
+    font-size: 8px;
+
+    font-weight: bold;
+}
+
+.game-info {
+    padding: 20px;
+}
+
+.game-title {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+.game-title h3 {
+    font-size: 17px;
+}
+
+.rating {
+    color: #ffd166;
+    font-size: 11px;
+}
+
+.game-info > p {
+    color: #747c8b;
+
+    font-size: 11px;
+
+    margin-bottom: 20px;
+}
+
+.game-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price small {
+    display: block;
+
+    color: #646c7a;
+
+    font-size: 9px;
+}
+
+.price strong {
+    font-size: 14px;
+}
+
+.book-button {
+    padding: 8px 15px;
+
+    border: 1px solid #00f5a0;
+
+    border-radius: 6px;
+
+    color: #00f5a0;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.book-button:hover {
+    background: #00f5a0;
+    color: #03110b;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how {
+    background: #0b0e15;
+
+    text-align: center;
+}
+
+.center-heading {
+    margin-bottom: 55px;
+}
+
+.center-heading > p:last-child {
+    color: #737b89;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.step {
+    padding: 25px;
+}
+
+.step-number {
+    color: #29313d;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.step-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: auto auto 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #121720;
+
+    border: 1px solid #29313e;
+
+    border-radius: 20px;
+
+    font-size: 30px;
+}
+
+.step h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #707887;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   OFFER
+========================= */
+
+.offer {
+    margin: 50px 7%;
+
+    padding: 60px;
+
+    border-radius: 25px;
+
+    border: 1px solid #29313c;
+
+    background:
+        radial-gradient(
+            circle at 80%,
+            rgba(0,245,160,.16),
+            transparent 40%
+        ),
+        #10151d;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.offer-text {
+    max-width: 650px;
+}
+
+.offer-text h2 {
+    font-size: 42px;
+
+    margin-bottom: 15px;
+}
+
+.offer-text h2 span {
+    color: #00f5a0;
+}
+
+.offer-text p {
+    color: #7c8492;
+
+    font-size: 13px;
+
+    margin-bottom: 25px;
+}
+
+.offer-code {
+    text-align: center;
+
+    width: 180px;
+
+    padding: 25px;
+
+    border: 1px dashed #00f5a0;
+
+    border-radius: 15px;
+}
+
+.offer-code small {
+    color: #6d7582;
+
+    font-size: 9px;
+}
+
+.offer-code h3 {
+    color: #00f5a0;
+
+    font-size: 27px;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   BOOKING
+========================= */
+
+.booking {
+    background: #07090f;
+}
+
+.booking-card {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 30px;
+
+    background: #11151e;
+
+    border: 1px solid #292f3b;
+
+    border-radius: 18px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.booking-field label {
+    display: block;
+
+    color: #737b88;
+
+    font-size: 10px;
+
+    margin-bottom: 8px;
+}
+
+.booking-field input,
+.booking-field select {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #090c12;
+
+    color: #d7dbe3;
+
+    border: 1px solid #2b313d;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    font-size: 11px;
+}
+
+.booking-field input:focus,
+.booking-field select:focus {
+    border-color: #00f5a0;
+}
+
+.confirm {
+    grid-column: 1 / -1;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #00f5a0;
+
+    color: #03110b;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.confirm:hover {
+    box-shadow:
+        0 0 25px rgba(0,245,160,.3);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 70px 7% 20px;
+
+    background: #05070b;
+
+    border-top: 1px solid #1d222b;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1.5fr;
+
+    gap: 50px;
+
+    padding-bottom: 50px;
+}
+
+.footer-about p {
+    max-width: 320px;
+
+    color: #656d7b;
+
+    font-size: 11px;
+
+    margin: 18px 0;
+}
+
+.socials {
+    display: flex;
+
+    gap: 15px;
+}
+
+.socials a {
+    color: #00f5a0;
+
+    font-size: 10px;
+}
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.footer-column h3 {
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #646c79;
+
+    font-size: 11px;
+
+    transition: .3s;
+}
+
+.footer-column a:hover {
+    color: #00f5a0;
+}
+
+.copyright {
+    padding-top: 20px;
+
+    border-top: 1px solid #1c212a;
+
+    text-align: center;
+
+    color: #4f5662;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px) {
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .games-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .search-box {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .booking-card {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+@media(max-width:600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .login {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .search-area {
+        padding: 0 5%;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+
+    .search-item {
+        border-right: none;
+        border-bottom: 1px solid #292f3b;
+    }
+
+    section {
+        padding: 75px 5%;
+    }
+
+    .section-heading h2,
+    .center-heading h2 {
+        font-size: 30px;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .offer {
+        margin: 30px 5%;
+        padding: 35px 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 30px;
+    }
+
+    .offer-text h2 {
+        font-size: 32px;
+    }
+
+    .booking-card {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        🎮 Game<span>Nest</span>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#how">How It Works</a>
+        <a href="#offers">Offers</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="#booking" class="login">Login</a>
+        <a href="#booking" class="signup">Sign Up</a>
+    </div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            🔥 India's Fun Gaming Destination
+        </div>
+
+        <h1>
+            Play More.<br>
+            <span>Book Smarter.</span>
+        </h1>
+
+        <p>
+            Discover exciting games, sports and activities near you.
+            Choose your favorite game, select a slot and start playing!
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#games" class="primary-btn">
+                Explore Games →
+            </a>
+
+            <a href="#how" class="secondary-btn">
+                How It Works
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="floating one">🏎️</div>
+
+        <div class="floating two">🎳</div>
+
+        <div class="floating three">⚽</div>
+
+        <div class="controller">
+            🎮
+        </div>
+
+        <h2>GAMENEST</h2>
+
+        <p>Where Every Game Begins</p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SEARCH
+========================= -->
+
+<div class="search-area">
+
+    <div class="search-box">
+
+        <div class="search-item">
+            <small>WHAT DO YOU WANT TO PLAY?</small>
+            <strong>🔍 Search games...</strong>
+        </div>
+
+        <div class="search-item">
+            <small>LOCATION</small>
+            <strong>📍 Ahmedabad</strong>
+        </div>
+
+        <div class="search-item">
+            <small>DATE</small>
+            <strong>📅 Select date</strong>
+        </div>
+
+        <button class="search-button">
+            Find Games
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     GAMES
+========================= -->
+
+<section id="games">
+
+    <div class="section-heading">
+
+        <div>
+
+            <p class="small-title">
+                EXPLORE & PLAY
+            </p>
+
+            <h2>
+                Popular <span>Activities</span>
+            </h2>
+
+        </div>
+
+        <a href="#" class="view-all">
+            View All →
+        </a>
+
+    </div>
+
+
+    <div class="games-grid">
+
+
+        <!-- CRICKET -->
+
+        <div class="game-card">
+
+            <div class="game-image cricket">
+
+                🏏
+
+                <span class="tag">
+                    POPULAR
+                </span>
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-title">
+
+                    <h3>Box Cricket</h3>
+
+                    <span class="rating">
+                        ⭐ 4.8
+                    </span>
+
+                </div>
+
+                <p>
+                    📍 City Sports Arena
+                </p>
+
+                <div class="game-bottom">
+
+                    <div class="price">
+
+                        <small>Starting from</small>
+
+                        <strong>
+                            ₹499 / hr
+                        </strong>
+
+                    </div>
+
+                    <a href="#booking" class="book-button">
+                        Book
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOWLING -->
+
+        <div class="game-card">
+
+            <div class="game-image bowling">
+
+                🎳
+
+                <span class="tag">
+                    TRENDING
+                </span>
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-title">
+
+                    <h3>Bowling</h3>
+
+                    <span class="rating">
+                        ⭐ 4.7
+                    </span>
+
+                </div>
+
+                <p>
+                    📍 FunZone Arena
+                </p>
+
+                <div class="game-bottom">
+
+                    <div class="price">
+
+                        <small>Starting from</small>
+
+                        <strong>
+                            ₹299 / game
+                        </strong>
+
+                    </div>
+
+                    <a href="#booking" class="book-button">
+                        Book
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- GO KARTING -->
+
+        <div class="game-card">
+
+            <div class="game-image gokart">
+
+                🏎️
+
+                <span class="tag">
+                    EXCITING
+                </span>
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-title">
+
+                    <h3>Go-Karting</h3>
+
+                    <span class="rating">
+                        ⭐ 4.9
+                    </span>
+
+                </div>
+
+                <p>
+                    📍 Speed Track
+                </p>
+
+                <div class="game-bottom">
+
+                    <div class="price">
+
+                        <small>Starting from</small>
+
+                        <strong>
+                            ₹599 / ride
+                        </strong>
+
+                    </div>
+
+                    <a href="#booking" class="book-button">
+                        Book
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BADMINTON -->
+
+        <div class="game-card">
+
+            <div class="game-image badminton">
+
+                🏸
+
+                <span class="tag">
+                    NEW
+                </span>
+
+            </div>
+
+            <div class="game-info">
+
+                <div class="game-title">
+
+                    <h3>Badminton</h3>
+
+                    <span class="rating">
+                        ⭐ 4.6
+                    </span>
+
+                </div>
+
+                <p>
+                    📍 Smash Court
+                </p>
+
+                <div class="game-bottom">
+
+                    <div class="price">
+
+                        <small>Starting from</small>
+
+                        <strong>
+                            ₹249 / hr
+                        </strong>
+
+                    </div>
+
+                    <a href="#booking" class="book-button">
+                        Book
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="how" id="how">
+
+    <div class="center-heading">
+
+        <p class="small-title">
+            SIMPLE & FAST
+        </p>
+
+        <h2>
+            How <span>GameNest</span> Works
+        </h2>
+
+        <p>
+            Book your favorite activity in just four simple steps.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <div class="step-icon">
+                🔍
+            </div>
+
+            <h3>
+                Choose a Game
+            </h3>
+
+            <p>
+                Explore different games and activities available near you.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <div class="step-icon">
+                📅
+            </div>
+
+            <h3>
+                Select a Slot
+            </h3>
+
+            <p>
+                Pick your preferred date and available time slot.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <div class="step-icon">
+                💳
+            </div>
+
+            <h3>
+                Book & Pay
+            </h3>
+
+            <p>
+                Confirm your booking with a simple and secure payment.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                04
+            </div>
+
+            <div class="step-icon">
+                🎮
+            </div>
+
+            <h3>
+                Play & Enjoy
+            </h3>
+
+            <p>
+                Arrive at the venue and enjoy your gaming experience.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     OFFER
+========================= -->
+
+<div class="offer" id="offers">
+
+    <div class="offer-text">
+
+        <p class="small-title">
+            LIMITED TIME OFFER
+        </p>
+
+        <h2>
+            Get <span>20% OFF</span>
+            Your First Booking
+        </h2>
+
+        <p>
+            New to GameNest? Enjoy an exclusive discount
+            on your first gaming experience.
+        </p>
+
+        <a href="#booking" class="primary-btn">
+            Book Now →
+        </a>
+
+    </div>
+
+
+    <div class="offer-code">
+
+        <small>
+            USE CODE
+        </small>
+
+        <h3>
+            GAME20
+        </h3>
+
+        <small>
+            Valid for new users
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     BOOKING
+========================= -->
+
+<section class="booking" id="booking">
+
+    <div class="center-heading">
+
+        <p class="small-title">
+            QUICK BOOKING
+        </p>
+
+        <h2>
+            Reserve Your <span>Game</span>
+        </h2>
+
+    </div>
+
+
+    <div class="booking-card">
+
+        <div class="booking-field">
+
+            <label>
+                Select Game
+            </label>
+
+            <select>
+
+                <option>
+                    Choose a game
+                </option>
+
+                <option>
+                    Box Cricket
+                </option>
+
+                <option>
+                    Bowling
+                </option>
+
+                <option>
+                    Go-Karting
+                </option>
+
+                <option>
+                    Badminton
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Select Date
+            </label>
+
+            <input type="date">
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Select Time
+            </label>
+
+            <select>
+
+                <option>
+                    Choose slot
+                </option>
+
+                <option>
+                    10:00 AM - 11:00 AM
+                </option>
+
+                <option>
+                    12:00 PM - 01:00 PM
+                </option>
+
+                <option>
+                    04:00 PM - 05:00 PM
+                </option>
+
+                <option>
+                    06:00 PM - 07:00 PM
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="booking-field">
+
+            <label>
+                Players
+            </label>
+
+            <input
+                type="number"
+                min="1"
+                placeholder="No. of players"
+            >
+
+        </div>
+
+
+        <button class="confirm">
+            🎮 Confirm Booking
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-about">
+
+            <div class="logo">
+                🎮 Game<span>Nest</span>
+            </div>
+
+            <p>
+                Your one-stop destination for discovering,
+                booking and enjoying exciting games and activities.
+            </p>
+
+            <div class="socials">
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    Twitter
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                GameNest
+            </h3>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#games">
+                Games
+            </a>
+
+            <a href="#how">
+                How It Works
+            </a>
+
+            <a href="#offers">
+                Offers
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Support
+            </h3>
+
+            <a href="#">
+                Help Center
+            </a>
+
+            <a href="#">
+                Contact Us
+            </a>
+
+            <a href="#">
+                FAQs
+            </a>
+
+            <a href="#">
+                Privacy Policy
+            </a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Ahmedabad, Gujarat
+            </p>
+
+            <p>
+                📧 support@gamenest.com
+            </p>
+
+            <p>
+                📞 +91 98765 43210
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 GameNest. All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
+```
